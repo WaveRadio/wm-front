@@ -41,7 +41,8 @@ switch ($options['action']) {
 			die ("This user does already exist\n");
 		} else {
 			db_addAdminUser($options['username'], enhashPassword($options['username'], DEFAULT_PASSWORD, 'admin'));
-			die ("Successfully added a new user with default password\n");
+			die ("Successfully added a new user with default password.\n".
+				 "[!] Don't forget to change it right now!\n");
 		}
 		break;
 

@@ -108,3 +108,9 @@ function db_addAdminUser($user_name, $user_hash) {
 function db_setAdminUserHash($user_name, $user_hash) {
 	return db_sqlQuery('UPDATE admin_user SET user_hash = ? WHERE user_name = ?', $user_hash, $user_name);
 }
+
+function db_checkBroadcastUser($user_hash, $station_tag) {
+	$res = db_sqlQuery('SELECT * FROM broacdast_user WHERE user_hash = ? AND station_tag = ?', $user_hash, $station_tag)->fetch();
+
+	return (empty($res) ? false : $res);
+}
