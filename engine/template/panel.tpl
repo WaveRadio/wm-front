@@ -14,12 +14,13 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="assets/style/style.css">
-	<script type="text/javascript" src="assets/js/lib/jquery.min.js"></script>
-	<script type="text/javascript" src="assets/js/lib/ace.js"></script>
-	<script type="text/javascript" src="assets/js/lib/ace-js.js"></script>
-	<script type="text/javascript" src="assets/js/lib/ace-theme-tomorrownight.js"></script>
-	<script type="text/javascript" src="assets/js/wmclient.js"></script>
-	<script type="text/javascript" src="assets/js/wmgui.js"></script>
+	<script type="text/javascript" src="/assets/js/lib/jquery.min.js"></script>
+	<script type="text/javascript" src="/assets/js/lib/sha256.min.js"></script>
+	<script type="text/javascript" src="/assets/js/lib/ace.js"></script>
+	<script type="text/javascript" src="/assets/js/lib/ace-js.js"></script>
+	<script type="text/javascript" src="/assets/js/lib/ace-theme-tomorrownight.js"></script>
+	<script type="text/javascript" src="/assets/js/wmclient.js"></script>
+	<script type="text/javascript" src="/assets/js/wmgui.js"></script>
 	<title>WaveManager Core</title>
 </head>
 <body>
@@ -84,7 +85,7 @@
 		</div>
 
 		<div class="tab-content" id="tab-content-about">
-			<img src="assets/icons/m0s_128.png" style="margin: 0 auto; display: block; width: 64px;">
+			<img src="/assets/gfx/logo.png" style="margin: 0 auto; display: block; height: 64px;">
 			<h2>About</h2>
 			<div class="about-text" id="about-info">
 				You are using <b>WaveManager</b>, a web radio station management system. It's like systemd, but for webradio.
@@ -104,7 +105,15 @@
 		</div>
 	</div>
 
-
+	<script type="text/javascript">
+		// wmc_controlConnection = new WebSocket((wmc_settings.secure ? 'wss' : 'ws')+'://'+wmc_settings.server+':'+wmc_settings.port);
+		$(document).ready(wm_init({
+			secure: <?php echo ($content['backend']['secure']); ?>,
+			server: '<?php echo ($content['backend']['address']); ?>',
+			port: <?php echo ($content['backend']['port']); ?>,
+			passphrase: '<?php echo ($content['backend']['passphrase']); ?>'
+		}));
+	</script>
 
 	</div>
 </body>

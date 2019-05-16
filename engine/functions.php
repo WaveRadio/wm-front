@@ -41,3 +41,11 @@ function getSelectedStation() {
 		return $stationTag;
 	}
 }
+
+function setNewBackendPassphrase() {
+	$passphrase = mknonce();
+
+	file_put_contents(WM_DATA_DIR.'/runtime/core/access_secret', $passphrase);
+
+	return $passphrase;
+}

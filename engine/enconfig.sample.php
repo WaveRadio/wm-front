@@ -13,6 +13,11 @@ define ('ADMIN_HASH_SALT', '_change_me_with_pure_randomness_');
 define ('BROADCAST_HASH_SALT', '_change_me_with_pure_randomness_');
 define ('WM_DATA_DIR', '/opt/wavemanager/share'); // Place where WM Core reads and writes its data
 
+// WaveManager Core Backend
+define ('WM_CORE_BACKEND_ADDRESS', 'backend.waveradio.org');
+define ('WM_CORE_BACKEND_PORT', 8903); // 8903 is default
+define ('WM_CORE_BACKEND_SECURE', false);
+
 // Public API
 define ('API_HISTORY_MAX', 10);
 define ('API_HISTORY_DEFAULT', 10);

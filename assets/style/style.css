@@ -1,27 +1,6 @@
 /*
-	
-	This is     ___          _             
-	 _ __ ___  / _ \ ___ ___(_) ___  _ __  
-	| '_ ` _ \| |_| / __/ __| |/ _ \| '_ \
-	| | | | | | |_| \__ \__ | | (_) | | | |
-	|_| |_| |_|\___/|___|___|_|\___/|_| |_|
-
-	A minimalistic extensible in-browser framework for Galaxy chat.
-
-	Copyright (c) 2017 IDENT Software ~ http://identsoft.org
-
-	m0ssion is a free software, you can use, modify
-	and redistribute it under the terms of GNU GPL version 3. 
-	See https://www.gnu.org/licenses/gpl-3.0.html or LICENSE file.
 
 
-	                    ~ DISCLAIMER ~
-	AUTHORS OF THIS SOFTWARE ARE NOT AFFILIATED WITH MOBSTUDIO LTD.
-	WE ARE NOT RESPONSIBLE FOR ANY EFFECT ON YOU ACCOUNT AND/OR
-	CHARACTER IN THE CHAT. KEEP IN MIND THAT IT IS PROHIBITED
-	TO USE ANY THIRD-PARTY SOFTWARE WITH THE GALAXY CHAT.
-
-	YOU ARE USING THIS SOFTWARE AT YOUR OWN RISK.
 
 */
 
@@ -137,7 +116,7 @@ h1, h2, h3, h4, h5
 	display: none;
 }
 
-.module
+.instance
 {
 	padding: 5px;
 	box-sizing: border-box;
@@ -146,13 +125,13 @@ h1, h2, h3, h4, h5
 }
 
 
-.module-tools
+.instance-tools
 {
 	width: 66px;
 	float: right;
 }
 
-.module-tool
+.instance-tool
 {
 	display: inline-block;
 	width: 16px;
@@ -161,31 +140,31 @@ h1, h2, h3, h4, h5
 	cursor: pointer;
 }
 
-.module-tool.edit
+.instance-tool.edit
 {
 	background-size: 16px 16px !important;
-	background: transparent url('assets/edit.svg') no-repeat center center;
+	background: transparent url('../gfx/edit.svg') no-repeat center center;
 	background-position: center!important;
 }
 
-.module-tool.remove
+.instance-tool.remove
 {
 	background-size: 16px 16px !important;
-	background: transparent url('assets/remove.svg') no-repeat center center;
+	background: transparent url('../gfx/remove.svg') no-repeat center center;
 	background-position: center!important;
 }
 
-.module-tool.active
+.instance-tool.active
 {
 	background-size: 16px 16px !important;
-	background: transparent url('assets/active.svg') no-repeat center center;
+	background: transparent url('../gfx/active.svg') no-repeat center center;
 	background-position: center!important;
 }
 
-.module-tool.inactive
+.instance-tool.inactive
 {
 	background-size: 16px 16px !important;
-	background: transparent url('assets/inactive.svg') no-repeat center center;
+	background: transparent url('../gfx/inactive.svg') no-repeat center center;
 	background-position: center!important;
 }
 
@@ -202,14 +181,14 @@ h1, h2, h3, h4, h5
 .editor-fullscreen.expand
 {
 	background-size: 16px 16px !important;
-	background: transparent url('assets/expand.svg') no-repeat center center;
+	background: transparent url('../gfx/expand.svg') no-repeat center center;
 	background-position: center!important;
 }
 
 .editor-fullscreen.collapse
 {
 	background-size: 16px 16px !important;
-	background: transparent url('assets/collapse.svg') no-repeat center center;
+	background: transparent url('../gfx/collapse.svg') no-repeat center center;
 	background-position: center!important;
 	margin-top: 30px;
 }
@@ -265,19 +244,19 @@ h1, h2, h3, h4, h5
 	cursor: pointer;
 }
 
-#module-name
+#instance-name
 {
 	margin-bottom: 10px;
 }
 
-#module-code
+#instance-code
 {
 	height: 400px;
 	box-sizing: border-box;
 	font-size: 13pt;
 }
 
-#module-code.fullscreen
+#instance-code.fullscreen
 {
 	flex: 1;
 }
@@ -321,8 +300,7 @@ h1, h2, h3, h4, h5
 	color: #ff8e8e;
 }
 
-#about-legal
-{
+#about-legal {
 	margin-top: 30px;
 	font-size: 9pt;
 	color: #c0c0c0;

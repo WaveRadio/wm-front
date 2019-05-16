@@ -14,13 +14,8 @@ function json_respond ($status, $payload = Array(), $public = false) {
 function display ($template, $content = Array()) {
 
 	global $route;
-	//$content['menu'] = getMenu();
 
-	//if (!empty($content['menu'][$route[0]]))
-	//	$content['menu'][$route[0]]['active'] = true;
-
-	if (!empty($_SESSION['sys_message']))
-	{
+	if (!empty($_SESSION['sys_message'])) {
 		$content['sys_message']['text'] = $_SESSION['sys_message'];
 		$content['sys_message']['type'] = $_SESSION['sys_message_type'];
 
@@ -30,9 +25,7 @@ function display ($template, $content = Array()) {
 
 	$content['current_timestamp'] = time();
 
-	// require_once ('engine/template/header.tpl');
 	require_once ('engine/template/'.$template.'.tpl');
-	// require_once ('engine/template/footer.tpl');
 	die();
 }
 
@@ -45,8 +38,7 @@ function display404()
 }
 
 
-function displayAuth()
-{
+function displayAuth() {
 	$content = Array(
 		'text_username' => _('username'),
 		'text_password' => _('password'),
@@ -57,8 +49,7 @@ function displayAuth()
 	require_once('engine/template/auth.tpl');
 }
 
-function displayError($message)
-{
+function displayError($message) {
 	header('HTTP/1.1 500 Internal Server Error');
 	$content = Array();
 	$content['title'] = _('System error');
