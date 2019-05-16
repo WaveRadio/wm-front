@@ -38,7 +38,7 @@ switch ($options['action']) {
 		} else {
 			die ($options['action'] === 'authenticate' ? $user['user_name'] : 'true');
 		}
-		break;
+	break;
 
 	default: 
 		die ("Bad action.\n".

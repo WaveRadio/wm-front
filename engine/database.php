@@ -110,7 +110,7 @@ function db_setAdminUserHash($user_name, $user_hash) {
 }
 
 function db_checkBroadcastUser($user_hash, $station_tag) {
-	$res = db_sqlQuery('SELECT * FROM broacdast_user WHERE user_hash = ? AND station_tag = ?', $user_hash, $station_tag)->fetch();
+	$res = db_sqlQuery('SELECT * FROM broadcast_user WHERE user_hash = ? AND station_tag = ?', $user_hash, $station_tag)->fetch();
 
 	return (empty($res) ? false : $res);
 }
