@@ -114,3 +114,13 @@ function db_checkBroadcastUser($user_hash, $station_tag) {
 
 	return (empty($res) ? false : $res);
 }
+
+function db_broadcastUserExists($user_name, $station_tag) {
+	$res = db_sqlQuery('SELECT count(*) as cnt from broadcast_user where user_name = ? AND station_tag = ?', $user_name, $station_tag)->fetch();
+
+	return ((int)$res['cnt'] > 0);
+}
+
+function db_setBroadcastUserHash($user_name, $station_tag, $user_hash) {
+	return db_sqlQuery('UPDATE broadcast_user SET user_hash = ? WHERE user_name = ? AND station_tag = ?', $user_hash, $user_name, $station_tag);
+}
