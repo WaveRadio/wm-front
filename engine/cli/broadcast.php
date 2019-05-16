@@ -15,8 +15,6 @@ require_once (dirname(__FILE__).'/../enconfig.php');
 require_once (WORK_PATH.'/database.php');
 require_once (WORK_PATH.'/functions.php');
 
-define ('ICY_INTERNAL_USERNAME', 'source'); // ICY clients don't support other than 'source' at their most
-
 $options = getopt("", Array("action:", "password:", "station:", "username:"));
 
 switch ($options['action']) {
@@ -30,7 +28,7 @@ switch ($options['action']) {
 			die ("Bad station specified\n");
 		}
 
-		$passwordHash = enhashPassword(ICY_INTERNAL_USERNAME, $options['password'], 'broadcast');
+		$passwordHash = enhashPassword($options['station'], $options['password'], 'broadcast');
 		$user = db_checkBroadcastUser($passwordHash, $options['station']);
 
 		if (empty($user)) {
@@ -52,7 +50,7 @@ switch ($options['action']) {
 			die ("Bad station specified\n");
 		}
 
-		$passwordHash = enhashPassword(ICY_INTERNAL_USERNAME, $options['password'], 'broadcast');
+		$passwordHash = enhashPassword($options['station'], $options['password'], 'broadcast');
 		$user = db_checkBroadcastUser($passwordHash, $options['station']);
 
 		if (empty($user)) {
