@@ -26,7 +26,7 @@ switch ($options['action']) {
 			die ("No password or station tag set\n");
 		}
 
-		if (!$db_stationExists($options['station'])) {
+		if (!db_stationExists($options['station'])) {
 			die ("Bad station specified\n");
 		}
 
