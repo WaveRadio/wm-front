@@ -107,6 +107,8 @@
 
 	<script type="text/javascript">
 		// wmc_controlConnection = new WebSocket((wmc_settings.secure ? 'wss' : 'ws')+'://'+wmc_settings.server+':'+wmc_settings.port);
+		var API_CSRF_TOKEN = '<?php echo($content['csrf_token']); ?>';
+
 		$(document).ready(wm_init({
 			secure: <?php echo ($content['backend']['secure']); ?>,
 			server: '<?php echo ($content['backend']['address']); ?>',

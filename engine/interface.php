@@ -38,12 +38,14 @@ function display404()
 }
 
 
-function displayAuth() {
+function displayAuth($csrfToken) {
 	$content = Array(
 		'text_username' => _('username'),
 		'text_password' => _('password'),
 		'text_submit'   => _('go'),
-		'title'         => _('WaveManager Core Authentication')
+		'title'         => _('WaveManager Core Authentication'),
+
+		'csrf_token'    => $csrfToken
 	);
 	
 	require_once('engine/template/auth.tpl');

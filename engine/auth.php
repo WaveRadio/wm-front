@@ -1,6 +1,11 @@
 <?php
 
 if ($route[1] == 'logout') {
+
+	if (!csrf_validate($_GET['token'])) {
+		die(); // TODO: proper error message
+	}
+
 	session_destroy();
 	header ('HTTP/1.1 302 Logged off');
 	header ('Location: /auth');
@@ -8,6 +13,10 @@ if ($route[1] == 'logout') {
 }
 
 if ($route[1] == 'go') {
+
+	if (!csrf_validate($_POST['csrf_token'])) {
+		displayAuth(csrf_create());
+	}
 
 	$login = strtolower($_POST['username']);
 	$password = enhashPassword($login, $_POST['password'], 'admin');
@@ -24,8 +33,8 @@ if ($route[1] == 'go') {
 		die();
 	}
 	else {
-		displayAuth();
+		displayAuth(csrf_create());
 	}
 }
 else
-	displayAuth();
+	displayAuth(csrf_create());

@@ -13,6 +13,7 @@
 		<form name="auth" action="/auth/go" method="post">
 			<input type="text" name="username" placeholder="<?php echo($content['text_username']); ?>">
 			<input type="password" name="password" placeholder="<?php echo($content['text_password']); ?>">
+			<input type="hidden" name="csrf_token" value="<?php echo($content['csrf_token']); ?>">
 			<input type="submit" value="<?php echo($content['text_submit']); ?>">
 		</form>
 	</div>
