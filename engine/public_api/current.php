@@ -19,8 +19,6 @@ if (empty($trackMetadata))
 	json_respond(1, Array('error' => 'Malformed metadata: no artist/title', 
 						  'raw_title' => $currentTrack), true);
 
-error_log(print_r($trackMetadata, true));
-
 $artistMetadata = db_searchArtist($trackMetadata['artist']);
 
 if (empty($artistMetadata))

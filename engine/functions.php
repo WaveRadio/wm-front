@@ -21,7 +21,7 @@ function splitMetadata($titleRaw) {
 	$separator = ' - ';
 	$separatorPosition = mb_strpos($titleRaw, $separator, 0, 'UTF-8');
 
-	if ($separatorPosition === -1) // no title extracted
+	if ($separatorPosition === false) // no title extracted
 		return null;
 
 	$artist = mb_substr($titleRaw, 0, $separatorPosition, 'UTF-8');
