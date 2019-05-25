@@ -12,6 +12,7 @@ define ('DB_PASSWORD', '_change_me_plz');
 define ('ADMIN_HASH_SALT', '_change_me_with_pure_randomness_');
 define ('BROADCAST_HASH_SALT', '_change_me_with_pure_randomness_');
 define ('WM_DATA_DIR', '/opt/wavemanager/share'); // Place where WM Core reads and writes its data
+define ('USER_MAX_PASSWORD_LENGTH', 256); // used to reduce hash computing time
 
 // WaveManager Core Backend
 define ('WM_CORE_BACKEND_ADDRESS', 'backend.waveradio.org');

@@ -18,7 +18,7 @@ if ($route[1] == 'go') {
 
 		$_SESSION['user_nonce'] = $nonce;
 		$_SESSION['user_id'] = (int)$userData['user_id'];
-		$_SESSION['user_login'] = $$userData['user_name'];
+		$_SESSION['user_login'] = $userData['user_name'];
 		header ('HTTP/1.1 302 Auth OK');
 		header ('Location: /');
 		die();
