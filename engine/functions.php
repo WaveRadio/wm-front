@@ -1,6 +1,6 @@
 <?php
 function mknonce($len = 64) {
-	$SNChars = '0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM-_+=/';
+	$SNChars = '0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM';
 	$SNCCount = strlen($SNChars);
 	$s = '';
 	while (strlen($s) < $len) {
