@@ -1,5 +1,9 @@
 <?php
 
+if (!csrf_validate($_REQUEST['csrf_token'])) {
+	json_respond(-1, 'Bad CSRF token');
+}
+
 array_shift($route); // remove /api/
 switch ($route[0])
 {

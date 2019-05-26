@@ -21,7 +21,7 @@ function processChangePassword() {
 	json_respond (0, 'OK');
 }
 
-array_shift($route); // remove /library/
+array_shift($route); // remove /user/
 switch ($route[0])
 {
 	case 'setpassword' :
