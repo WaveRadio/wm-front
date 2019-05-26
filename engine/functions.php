@@ -34,7 +34,7 @@ function splitMetadata($titleRaw) {
 }
 
 function validateInstanceTag($instanceTag) {
-	return (preg_match('/^[a-z]{1,20}$/', $instanceTag) === 1);
+	return (preg_match('/^[a-z0-9]{1,20}$/', $instanceTag) === 1);
 }
 
 function getSelectedStation() {
