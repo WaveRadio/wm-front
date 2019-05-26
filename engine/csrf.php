@@ -2,9 +2,12 @@
 
 
 function csrf_create() {
-	$nonce = mknonce(64);
-	$_SESSION['csrf_token'] = $nonce;
-	return $nonce;
+	if (empty($_SESSION['csrf_token'])) {
+		$nonce = mknonce(64);
+		$_SESSION['csrf_token'] = $nonce;
+	}
+	
+	return $_SESSION['csrf_token'];
 }
 
 function csrf_validate($token) {
