@@ -1,7 +1,7 @@
 <?php
 
 function processAdd() {
-	$instance_tag = (int)$_POST['instance-tag'];
+	$instance_tag = (int)$_POST['instance_tag'];
 	
 	json_respond(0, 'OK');
 }

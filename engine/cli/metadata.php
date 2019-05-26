@@ -42,7 +42,7 @@ function air_update ($type, $data = Array())
 $options = getopt("", Array("title:", "artist:", "station:"));
 
 $stationTag = $options['station'];
-if (preg_match('/^[a-z]{1,20}$/', $stationTag) !== 1) {
+if (!validateInstanceTag($stationTag)) {
 	die ("Bad station tag specified\n");
 }
 
