@@ -39,11 +39,14 @@
 		<div class="tab-pointer active" id="tab-instances" data-tab-name="instances">
 			Instances
 		</div>
-		<div class="tab-pointer" id="tab-editor" data-tab-name="editor">
-			Code
+		<div class="tab-pointer" id="tab-library" data-tab-name="library">
+			Library
+		</div>
+		<div class="tab-pointer" id="tab-admin" data-tab-name="admin">
+			Administration
 		</div>
 		<div class="tab-pointer" id="tab-log" data-tab-name="log">
-			Log
+			Logs
 		</div>
 		<div class="tab-pointer" id="tab-about" data-tab-name="about">
 			About
@@ -60,9 +63,9 @@
 			</div>
 		</div>
 
-		<div class="tab-content" id="tab-content-editor">
+		<!-- <div class="tab-content" id="tab-content-editor">
 			<div id="editor-wrap">
-			<div id="editor-header-wrap"> <!-- this prevents flex from moving expand btn -->
+			<div id="editor-header-wrap">
 				<div id="editor-fullscreen-toggler" class="editor-fullscreen expand" title="Toggle editor fullscreen mode"></div> 
 				<h2>Configuration editor</h2>
 			</div>
@@ -74,6 +77,14 @@
 				<div class="control button" id="editor-reset" title="Clear all fields">Reset</div>
 			</div>
 			</div>
+		</div> -->
+
+		<div class="tab-content" id="tab-content-library">
+			<h2>Station library & stats</h2>
+		</div>
+
+		<div class="tab-content" id="tab-content-admin">
+			<h2>Administration</h2>
 		</div>
 
 		<div class="tab-content" id="tab-content-log">

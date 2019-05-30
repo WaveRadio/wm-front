@@ -139,7 +139,7 @@ function wm_init(wmBackendSettings) {
         $(tab).click(function() {switchTab(this)});
     });
 
-    codeEditor = ace.edit("instance-code");
+    /* codeEditor = ace.edit("instance-code");
     codeEditor.setTheme("ace/theme/tomorrow_night_bright");
     codeEditor.getSession().setMode("ace/mode/javascript");
     codeEditor.getSession().setUseWrapMode(true);
@@ -148,7 +148,7 @@ function wm_init(wmBackendSettings) {
     $('#editor-save').click(wm_saveInstance);
     $('#editor-reset').click(editorReset);
     $('#instances-new').click(wm_newInstance);
-    $('#editor-fullscreen-toggler').click(toggleEditorFullscreen);
+    $('#editor-fullscreen-toggler').click(toggleEditorFullscreen); */
 
     switchTab('instances');
 
