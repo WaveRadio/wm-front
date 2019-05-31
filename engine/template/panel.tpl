@@ -20,6 +20,7 @@
 	<script type="text/javascript" src="/assets/js/lib/ace-js.js"></script>
 	<script type="text/javascript" src="/assets/js/lib/ace-theme-tomorrownight.js"></script>
 	<script type="text/javascript" src="/assets/js/wmclient.js"></script>
+	<script type="text/javascript" src="/assets/js/wmapi.js"></script>
 	<script type="text/javascript" src="/assets/js/wmgui.js"></script>
 	<title>WaveManager Core</title>
 </head>
@@ -85,6 +86,11 @@
 
 		<div class="tab-content" id="tab-content-admin">
 			<h2>Administration</h2>
+			<div>
+				<h3>Set new password</h3>
+				<input type="password" id="newPasswordText">
+				<button onclick="wm_onSetPassword()">set</button>
+			</div>
 		</div>
 
 		<div class="tab-content" id="tab-content-log">
