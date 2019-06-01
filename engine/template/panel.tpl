@@ -82,6 +82,15 @@
 
 		<div class="tab-content" id="tab-content-library">
 			<h2>Station library & stats</h2>
+			<div id="library-json-update">
+				<h3>Import artist library from JSON</h3>
+				<form id="artistsJsonForm" method="POST" action="/api/library/import" style="display:none;">
+					<input type="file" id="artistsFile" name="artists" class="control">
+				</form>
+				<button onclick="wm_onImportFileChoose()">choose file</button>
+				<button onclick="wm_onImportSend()">go</button>
+				<textarea class="log" id="artistsJsonUploadResults"></textarea>
+			</div>
 		</div>
 
 		<div class="tab-content" id="tab-content-admin">

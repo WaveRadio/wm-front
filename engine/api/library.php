@@ -1,7 +1,35 @@
 <?php
 
-function processEdit()
-{
+require_once (WORK_PATH.'/lib/import.inc.php');
+
+function processImport() {
+
+	if (empty($_FILES['artists'])) {
+		json_respond(1, 'No file found');
+	}
+
+	$sourceFile = file_get_contents($_FILES['artists']['tmp_name']);
+
+	if (empty($sourceFile)) {
+		json_respond(2, 'Empty database file');
+	}
+
+	$sourceStruct = json_decode($sourceFile, true);
+	if (empty($sourceStruct)) {
+		json_respond(3, 'Malformed JSON in database file');
+	}
+
+
+	$importLog = importTracks($sourceStruct, false);
+
+	if (empty($importLog)) {
+		json_respond(4, 'Bad JSON structure');
+	} else {
+		json_respond(0, $importLog);
+	}
+}
+
+function processEdit() {
 	$track_id = (int)$_POST['track-id'];
 	if (!trackExists($track_id))
 		json_respond(1, 'This track does not exist');
@@ -24,6 +52,10 @@ switch ($route[0])
 {
 	case 'edit' :
 		processEdit();
+		break;
+
+	case 'import':
+		processImport();
 		break;
 
 	default:
