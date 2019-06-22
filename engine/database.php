@@ -66,7 +66,7 @@ function db_addArtistCity($city_name) {
 	return pgsql_getLastInsertId('seq_artist_city_id'); 
 }
 
-function db_getHistoryFor($station_tag, $amount, $order = 'desc') {
+function db_getHistoryFor($station_tag, $amount, $order = 'desc', $addArtistId = false) {
 	$order = ($order === 'desc') ? $order : 'asc'; // prevent wrong values
 	$amount = (int)$amount;
 
@@ -74,8 +74,11 @@ function db_getHistoryFor($station_tag, $amount, $order = 'desc') {
 	'select
 		artist.artist_name as artist,
 		track_title,
-		unix_timestamp(history_timestamp) as start_time
-	from
+		unix_timestamp(history_timestamp) as start_time'
+
+		.($addArtistId ? ', artist.artist_id as artist_id ' : ' ').
+
+	'from
 		track_history
 	inner join
 		artist
