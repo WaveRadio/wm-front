@@ -40,6 +40,10 @@ function db_stationExists($station_tag) {
 	return ((int)$res['cnt'] > 0);
 }
 
+function db_getStations() {
+	return db_sqlQuery('select * from stations')->fetchAll();
+}
+
 function db_getArtistLinks($artist_id) {
 	return db_sqlQuery("SELECT link_text FROM artist_link WHERE artist_id = ?", $artist_id)->fetchAll();
 }

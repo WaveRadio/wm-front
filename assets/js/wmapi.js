@@ -1,11 +1,11 @@
-function wm_apiRequest(method, data, onSuccess, type) {
+function wm_apiRequest(method, data, onSuccess, type, isPublic) {
 	data = data || {};
 	onSuccess = (typeof onSuccess === "function" ? onSuccess : null);
-	type = (type.toLowerCase() === "post" ? "POST" : "GET");
+	type = ((type && type.toLowerCase() === "post") ? "POST" : "GET");
 
-	data['csrf_token'] = API_CSRF_TOKEN;
+	data['csrf_token'] = (typeof API_CSRF_TOKEN !== "undefined") ? API_CSRF_TOKEN : undefined;
 
-	$.ajax("/api/" + method, {
+	$.ajax((isPublic ? "/public/" : "/api/") + method, {
 		data: data,
 		dataType: "json",
 		error: function(jq, status, error) {
@@ -15,6 +15,13 @@ function wm_apiRequest(method, data, onSuccess, type) {
 		method: type,
 		success: onSuccess
 	});
+}
+
+function wm_getHistory(station, amount, onSuccess) {
+	wm_apiRequest("history", {
+		amount: amount,
+		station: station
+	}, onSuccess, "GET", true);
 }
 
 function wm_onSetPassword() {

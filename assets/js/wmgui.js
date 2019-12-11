@@ -134,10 +134,16 @@ function wm_saveInstance() {
     // todo: send API command to save instance
 }
 
-function wm_init(wmBackendSettings) {    
+function wm_initTabs(defaultTab) {
     $('.tab-pointer').each(function (idx, tab) {
         $(tab).click(function() {switchTab(this)});
     });
+
+    switchTab(defaultTab);
+}
+
+function wm_init(wmBackendSettings) {    
+    
 
     /* codeEditor = ace.edit("instance-code");
     codeEditor.setTheme("ace/theme/tomorrow_night_bright");
@@ -150,7 +156,7 @@ function wm_init(wmBackendSettings) {
     $('#instances-new').click(wm_newInstance);
     $('#editor-fullscreen-toggler').click(toggleEditorFullscreen); */
 
-    switchTab('instances');
+    wm_initTabs('instances');
 
     wmc_init(wmBackendSettings);
 }

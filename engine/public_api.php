@@ -11,6 +11,10 @@ switch ($route[0])
 		require_once ('engine/public_api/current.php'); 
 		break;
 
+	case 'tools':
+		require_once ('engine/public_api/tools.php'); 
+		break;
+
 	default :
 		json_respond (-1, 'Bad Public API request');
 		break;

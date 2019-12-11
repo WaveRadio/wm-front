@@ -27,10 +27,9 @@ if (empty($res)) {
 	if ($extend) {
 		foreach ($res as &$historyItem) {
 			$links = db_getArtistLinks($historyItem['artist_id']);
-
 			$historyItem['artist_links'] = $links;
 		}
 	}
-	
+
 	json_respond(0, $res, true);
 }

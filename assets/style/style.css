@@ -1,10 +1,4 @@
-/*
-
-
-
-*/
-
-@import url(assets/fonts.css);
+@import url(/assets/style/fonts.css);
 
 html, body
 {
@@ -28,7 +22,7 @@ h1, h2, h3, h4, h5
 	font-weight: 300;
 }
 
-button, text, textarea, input
+button, text, textarea, input, select, option
 {
 	font-family: "Open Sans", Verdana, Tahoma, Arial, Sans-Serif;
 	box-sizing: border-box;
@@ -39,7 +33,7 @@ button, text, textarea, input
 	outline: none;
 }
 
-input
+input, select, option
 {
 
 	border-bottom: 1px solid #c0c0c0;
@@ -49,6 +43,10 @@ input
 	font-size: 12pt;
 	font-weight: 300;
 	padding: 4px;
+}
+
+input, select {
+	margin-bottom: 5px;
 }
 
 input.monospace
@@ -79,6 +77,22 @@ textarea.log
 
 	display: block;
 	width: 100%;
+}
+
+table {
+	width: 100%;
+}
+
+th, td {
+	background: #202020;
+	border: 1px transparent;
+	padding: 5px;
+}
+
+th {
+	font-family: "Open Sans", Verdana, Tahoma, Arial, Sans-Serif;
+	font-weight: 300;
+	font-size: 15pt;
 }
 
 #messages-wrapper
@@ -305,5 +319,10 @@ textarea.log
 	margin-top: 30px;
 	font-size: 9pt;
 	color: #c0c0c0;
+	text-align: center;
+}
+
+.pubtools-history-table-time {
+	width: 100px;
 	text-align: center;
 }
